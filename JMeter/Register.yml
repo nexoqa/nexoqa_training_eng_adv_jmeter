@@ -1,0 +1,20 @@
+execution:
+- concurrency: 20
+  scenario: Register
+
+scenarios:
+  Register:
+    script: Register.jmx
+    variables:
+      PROTOCOL: http
+      HOST: localhost
+
+settings:
+  artifacts-dir: ./artifacts/%Y-%m-%d_%H-%M-%S.%f
+
+reporting:
+- module: console
+- module: blazemeter
+  report-name: Register test report
+  test: Register test
+  project: TabTracker project
